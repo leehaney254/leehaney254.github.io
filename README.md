@@ -28,6 +28,9 @@ I am an open-source enthusiast, I learned a lot from the open-source community a
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/firebase/firebase.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 
+## Live Website
+The online portfolio can be found on [here](https://leehaney254.github.io/)
+
 # My Portfolio
 
 ## Built With
