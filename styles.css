@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+label {
+  display: none;
+}
+
 #nav-link {
   display: none;
 }
