@@ -79,7 +79,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-##The Loom video
+## The Loom video
 - The loom video can be found [here](https://www.loom.com/share/594818d13a774ae0a2b24ca3a44ebe06)
 
 ## Show your support
