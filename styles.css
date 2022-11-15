@@ -235,7 +235,7 @@ ul {
   color: #fff;
 }
 
-.anc-margin {
+.no-decor {
   text-decoration: none;
 }
 
@@ -505,6 +505,10 @@ button:hover {
 
 .not-displaying {
   display: none;
+}
+
+#form-foot {
+  margin-bottom: 40px;
 }
 
 @media only screen and (min-width: 768px) {
