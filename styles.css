@@ -136,6 +136,10 @@ ul {
   text-decoration: none;
   font-family: "Inter", sans-serif;
   font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #FFF5E1;
 }
 
 #heading-second {
