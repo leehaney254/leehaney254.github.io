@@ -15,16 +15,22 @@ label {
   bottom: 0;
   z-index: 99;
   background: #3c3a39;
-  transform: translateY(-100%);
   transition: transform 0.1s;
+}
+
+.hideMenu {
+  transform: translateY(-100%);
+}
+
+#hum-menu {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
 }
 
 .displayMenu {
   transform: translateY(0);
-}
-
-.displayCancel {
-  z-index: 100;
 }
 
 .flexs {
@@ -47,12 +53,18 @@ label {
 
 #navbar {
   height: 48px;
-  background-color: #3c3a39;
   box-sizing: border-box;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 10px 12px;
+}
+
+header {
+  background-color: #3c3a39;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #logo {
@@ -142,6 +154,12 @@ ul {
   padding: 0;
 }
 
+.anc-li {
+  border-bottom: 2px solid #6f6c6b;
+  width: 80%;
+  margin: 50px 0 0 40px;
+}
+
 .anc-decor {
   text-decoration: none;
   font-family: "Inter", sans-serif;
@@ -150,9 +168,7 @@ ul {
   font-size: 32px;
   line-height: 44px;
   color: #fff5e1;
-  border-bottom: 2px solid #6f6c6b;
   width: 100%;
-  margin-left: 40px;
 }
 
 #heading-second {
@@ -217,6 +233,10 @@ ul {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
+}
+
+.anc-margin {
+  text-decoration: none;
 }
 
 #contents1 {
@@ -521,7 +541,6 @@ button:hover {
 
   .anc-margin {
     margin-left: 150px;
-    text-decoration: none;
     font-family: "Inter", sans-serif;
     font-style: normal;
   }
@@ -541,8 +560,12 @@ button:hover {
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
-    border-bottom: none;
     margin-left: auto;
+  }
+
+  .anc-li {
+    border-bottom: none;
+    margin: auto;
   }
 
   #space-down {
