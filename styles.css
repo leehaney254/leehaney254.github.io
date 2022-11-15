@@ -132,6 +132,12 @@ ul {
   padding: 0;
 }
 
+.anc-decor {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+}
+
 #heading-second {
   height: 107px;
   margin: 0 24px 52px 24px;
