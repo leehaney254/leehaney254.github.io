@@ -458,6 +458,10 @@ button:hover {
   color: #f55800;
 }
 
+.not-displaying {
+  display: none;
+}
+
 @media only screen and (min-width: 768px) {
   #logo {
     font-family: "Inter", sans-serif;
