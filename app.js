@@ -21,16 +21,12 @@ function menuToogle() {
     cancelImage.classList.add('not-displaying');
     showMenu.classList.add('hideMenu');
     showMenu.classList.remove('displayMenu');
-    hideMail.classList.remove('not-displaying');
     displayMenu = false;
   }
 }
 
-
 // Create event listeners
 humbergerMenu.addEventListener('click', menuToogle);
 for (let i = 0; i <= navLinks.length; i++) {
-  navLinks[i].addEventListener('click', removeMenu);
+  navLinks[i].addEventListener('click', menuToogle);
 }
-
-

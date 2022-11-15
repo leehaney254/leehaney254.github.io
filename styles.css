@@ -7,6 +7,10 @@ label {
   display: none;
 }
 
+#hide-mail {
+  display: none;
+}
+
 #nav-link {
   position: fixed;
   top: 0;
@@ -541,6 +545,10 @@ button:hover {
 
   #hum-menu {
     display: none;
+  }
+
+  #hide-mail {
+    display: inline;
   }
 
   .anc-margin {
