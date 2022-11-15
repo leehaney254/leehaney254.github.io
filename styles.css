@@ -8,7 +8,13 @@ label {
 }
 
 #nav-link {
-  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #3C3A39;
 }
 
 .flexs {
@@ -37,10 +43,6 @@ label {
   align-items: center;
   justify-content: space-between;
   padding: 10px 12px;
-}
-
-.anc-decor {
-  text-decoration: none;
 }
 
 #logo {
@@ -496,9 +498,13 @@ button:hover {
 
   .anc-margin {
     margin-left: 150px;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
   }
 
   #nav-link {
+    position: static;
     display: flex;
     align-items: center;
     text-align: center;
@@ -508,11 +514,11 @@ button:hover {
 
   .anc-decor {
     color: #fff;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
+    border-bottom: none;
+    margin-left: auto;
   }
 
   #space-down {
