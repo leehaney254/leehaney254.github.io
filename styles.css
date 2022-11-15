@@ -140,6 +140,9 @@ ul {
   font-size: 32px;
   line-height: 44px;
   color: #FFF5E1;
+  border-bottom: 2px solid #6F6C6B;
+  width: 100%;
+  margin-left: 40px;
 }
 
 #heading-second {
