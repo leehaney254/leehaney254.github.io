@@ -54,6 +54,13 @@ desktopImage.id = 'large-image';
 sideDescription.id = 'descp-side';
 description.className = 'description';
 
+//set attributes
+mobileImage.src = cardInformation.img[0];
+mobileImage.setAttribute('src', cardInformation.img[0]);
+mobileImage.setAttribute('alt', 'Mobile version card');
+desktopImage.setAttribute('src', cardInformation.img[1]);
+desktopImage.setAttribute('alt', 'Dektop version card');
+
 }
 
 //call the functions
