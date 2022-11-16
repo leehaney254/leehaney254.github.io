@@ -7,8 +7,34 @@ label {
   display: none;
 }
 
-#nav-link {
+#hide-mail {
   display: none;
+}
+
+#nav-link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: #3c3a39;
+  transition: transform 0.1s;
+}
+
+.hideMenu {
+  transform: translateY(-100%);
+}
+
+#hum-menu {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 2rem;
+}
+
+.displayMenu {
+  transform: translateY(0);
 }
 
 .flexs {
@@ -31,7 +57,6 @@ label {
 
 #navbar {
   height: 48px;
-  background-color: #3c3a39;
   box-sizing: border-box;
   flex-direction: row;
   align-items: center;
@@ -39,8 +64,11 @@ label {
   padding: 10px 12px;
 }
 
-.anc-decor {
-  text-decoration: none;
+header {
+  background-color: #3c3a39;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 #logo {
@@ -130,6 +158,28 @@ ul {
   padding: 0;
 }
 
+.anc-li {
+  border-bottom: 2px solid #6f6c6b;
+  width: 80%;
+  margin: 0 0 0 30px;
+  padding: 25px 0 10px 20px;
+}
+
+#margin-tops {
+  margin-top: 40px;
+}
+
+.anc-decor {
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #fff5e1;
+  width: 100%;
+}
+
 #heading-second {
   height: 107px;
   margin: 0 24px 52px 24px;
@@ -192,6 +242,10 @@ ul {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
+}
+
+.no-decor {
+  text-decoration: none;
 }
 
 #contents1 {
@@ -458,6 +512,14 @@ button:hover {
   color: #f55800;
 }
 
+.not-displaying {
+  display: none;
+}
+
+#form-foot {
+  margin-bottom: 40px;
+}
+
 @media only screen and (min-width: 768px) {
   #logo {
     font-family: "Inter", sans-serif;
@@ -490,25 +552,38 @@ button:hover {
     display: none;
   }
 
+  #hide-mail {
+    display: inline;
+  }
+
   .anc-margin {
     margin-left: 150px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
   }
 
   #nav-link {
+    position: static;
     display: flex;
     align-items: center;
     text-align: center;
     margin-right: 150px;
     gap: 30px;
+    transform: translateY(0);
   }
 
   .anc-decor {
     color: #fff;
-    font-family: "Inter", sans-serif;
-    font-style: normal;
     font-weight: 600;
     font-size: 15px;
     line-height: 20px;
+    margin-left: auto;
+  }
+
+  .anc-li {
+    border-bottom: none;
+    margin: auto;
+    padding: 0;
   }
 
   #space-down {
@@ -557,6 +632,10 @@ button:hover {
     row-gap: 30px;
     display: grid;
     grid-template-columns: auto auto auto;
+  }
+
+  #margin-tops {
+    margin-top: auto;
   }
 
   #about-me {
