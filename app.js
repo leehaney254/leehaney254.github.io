@@ -7,7 +7,7 @@ const showMenu = document.querySelector('#nav-link'); // select the menu options
 const hideMail = document.querySelector('#hide-mail');
 const navLinks = document.querySelectorAll('.anc-decor');
 const portfolioSection = document.querySelector('#section-bac');
- //select the porfolio section
+//select the porfolio section
 
 //create javascript object to hold all the information
 let cardInformation = {
@@ -37,46 +37,80 @@ function menuToogle() {
   }
 }
 
-function addCards() {
+function firstCards() {
   const div = document.createElement('div');  //create the housing div
   const imgDiv = document.createElement('div'); //create a div to hold the images
   const mobileImage = document.createElement('img'); //create the mobile image
   const desktopImage = document.createElement('img'); //create the desktop image
   const sideDescription = document.createElement('div'); //create side description 
   const description = document.createElement('div'); //create side description 
+  const heading = document.createElement('h3'); //create title
+  const firstParagraph = document.createElement('p');
+  const badgediv = document.createElement('div');
+  const firstList = document.createElement('ul');
+  const firstTechcss = document.createElement('l1');
+  const firstTechhtm = document.createElement('l1');
+  const firstTechboot = document.createElement('l1');
+  const firstTechrub = document.createElement('l1');
+  const firstButton = document.createElement('button');
 
-//set id's and classes
-div.id = 'card';
-div.className = 'card';
-imgDiv.id = 'img-div';
-mobileImage.id = 'rec-img';
-desktopImage.id = 'large-image';
-sideDescription.id = 'descp-side';
-description.className = 'description';
+  //set id's and classes
+  div.id = 'card';
+  div.className = 'card';
+  imgDiv.id = 'img-div';
+  mobileImage.id = 'rec-img';
+  desktopImage.id = 'large-image';
+  sideDescription.id = 'descp-side';
+  description.className = 'description';
+  heading.id = "head1";
+  firstParagraph.className = 'contents1';
+  badgediv.className = 'description';
+  firstList.className = 'buttons';
+  firstTechcss.className = 'button1 butcss';
+  firstTechhtm.className = 'button1 buthtm';
+  firstTechboot.className = 'button1 butboot';
+  firstTechrub.className = 'button1 butrub';
+  firstButton.className = 'but-see';
+  firstButton.id = 'butsee1';
 
-//set attributes
-mobileImage.src = cardInformation.img[0];
-mobileImage.setAttribute('src', cardInformation.img[0]);
-mobileImage.setAttribute('alt', 'Mobile version card');
-desktopImage.setAttribute('src', cardInformation.img[1]);
-desktopImage.setAttribute('alt', 'Dektop version card');
+  //set attributes
+  mobileImage.src = cardInformation.img[0];
+  mobileImage.setAttribute('src', cardInformation.img[0]);
+  mobileImage.setAttribute('alt', 'Mobile version card');
+  desktopImage.setAttribute('src', cardInformation.img[1]);
+  desktopImage.setAttribute('alt', 'Dektop version card');
+  heading.innerHTML = cardInformation.name;
+  firstParagraph.innerHTML = cardInformation.description;
+  firstTechcss.innerHTML = cardInformation.tech[0];
+  firstTechhtm.innerHTML = cardInformation.tech[1];
+  firstTechboot.innerHTML = cardInformation.tech[2];
+  firstTechrub.innerHTML = cardInformation.tech[3];
+  firstButton.innerHTML = "See Project";
 
-//append children
-imgDiv.appendChild(mobileImage);
-div.appendChild(imgDiv);
-div.appendChild(sideDescription);
-
+  //append children
+  portfolioSection.appendChild(div);
+  div.appendChild(imgDiv);
+  div.appendChild(sideDescription);
+  imgDiv.appendChild(mobileImage);
+  sideDescription.appendChild(heading);
+  sideDescription.appendChild(firstParagraph);
+  sideDescription.appendChild(badgediv);
+  badgediv.appendChild(firstList);
+  firstList.appendChild(firstTechcss);
+  firstList.appendChild(firstTechhtm);
+  firstList.appendChild(firstTechboot);
+  firstList.appendChild(firstTechrub);
+  badgediv.appendChild(firstButton);
 }
 
 //call the functions
-addCards();
+firstCards();
 
 // Create event listeners
 portfolioSection.addEventListener('click', addCards);
 humbergerMenu.addEventListener('click', menuToogle);
-for (let i = 0; i <= navLinks.length; i++) {
-  navLinks[i].addEventListener('click', menuToogle);
-}
-
+navLinks.forEach(function (navItems) {
+  navItems.addEventListener('click', menuToogle);
+})
 
 
