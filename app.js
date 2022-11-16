@@ -61,6 +61,11 @@ mobileImage.setAttribute('alt', 'Mobile version card');
 desktopImage.setAttribute('src', cardInformation.img[1]);
 desktopImage.setAttribute('alt', 'Dektop version card');
 
+//append children
+imgDiv.appendChild(mobileImage);
+div.appendChild(imgDiv);
+div.appendChild(sideDescription);
+
 }
 
 //call the functions
