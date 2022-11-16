@@ -30,7 +30,7 @@ label {
   position: fixed;
   z-index: 100;
   top: 1rem;
-  right: 1rem;
+  right: 2rem;
 }
 
 .displayMenu {
@@ -161,7 +161,12 @@ ul {
 .anc-li {
   border-bottom: 2px solid #6f6c6b;
   width: 80%;
-  margin: 50px 0 0 40px;
+  margin: 0 0 0 30px;
+  padding: 25px 0 10px 20px;
+}
+
+#margin-tops {
+  margin-top: 40px;
 }
 
 .anc-decor {
@@ -578,6 +583,7 @@ button:hover {
   .anc-li {
     border-bottom: none;
     margin: auto;
+    padding: 0;
   }
 
   #space-down {
@@ -626,6 +632,10 @@ button:hover {
     row-gap: 30px;
     display: grid;
     grid-template-columns: auto auto auto;
+  }
+
+  #margin-tops {
+    margin-top: auto;
   }
 
   #about-me {
