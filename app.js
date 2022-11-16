@@ -6,7 +6,8 @@ const cancelImage = document.querySelector('#cancel-menu');
 const showMenu = document.querySelector('#nav-link'); // select the menu options
 const hideMail = document.querySelector('#hide-mail');
 const navLinks = document.querySelectorAll('.anc-decor');
-const portfolioSection = document.querySelector('#section-bac'); //select the porfolio section
+const portfolioSection = document.querySelector('#section-bac');
+ //select the porfolio section
 
 //create javascript object to hold all the information
 let cardInformation = {
@@ -43,9 +44,15 @@ function addCards() {
   const desktopImage = document.createElement('img'); //create the desktop image
   const sideDescription = document.createElement('div'); //create side description 
   const description = document.createElement('div'); //create side description 
-  const heading =
 
- //here
+//set id's and classes
+div.id = 'card';
+div.className = 'card';
+imgDiv.id = 'img-div';
+mobileImage.id = 'rec-img';
+desktopImage.id = 'large-image';
+sideDescription.id = 'descp-side';
+description.className = 'description';
 
 }
 
