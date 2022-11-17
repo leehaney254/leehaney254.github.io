@@ -11,13 +11,23 @@ const portfolioSection = document.querySelector('#section-bac');
 
 //create javascript object to hold all the information
 let cardInformation = {
-  name: "Multi-Post Stories",
-  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
-  tech: ["css", "html", "bootstrap", "ruby"],
-  img: ["./assets/first-card.png", "./assets/large.png"],
-  liveVersion: "https://leehaney254.github.io/",
-  source: "https://github.com/leehaney254/leehaney254.github.io",
+  firstCards: {
+    name: "Multi-Post Stories",
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
+    tech: ["css", "html", "bootstrap", "ruby"],
+    img: ["./assets/first-card.png", "./assets/large.png"],
+    liveVersion: "https://leehaney254.github.io/",
+    source: "https://github.com/leehaney254/leehaney254.github.io",
+  },
+  otherCards: {
+    name: "Profesional Art Printing Data",
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    tech: ["html", "bootstrap", "ruby"],
+    liveVersion: "https://leehaney254.github.io/",
+    source: "https://github.com/leehaney254/leehaney254.github.io",
+  }
 }
+
 
 // Create the functions
 function menuToogle() {
@@ -74,17 +84,17 @@ function firstCards() {
   firstButton.id = 'butsee1';
 
   //set attributes
-  mobileImage.src = cardInformation.img[0];
-  mobileImage.setAttribute('src', cardInformation.img[0]);
+  mobileImage.src = cardInformation.firstCards.img[0];
+  mobileImage.setAttribute('src', cardInformation.firstCards.img[0]);
   mobileImage.setAttribute('alt', 'Mobile version card');
-  desktopImage.setAttribute('src', cardInformation.img[1]);
+  desktopImage.setAttribute('src', cardInformation.firstCards.img[1]);
   desktopImage.setAttribute('alt', 'Dektop version card');
-  heading.innerHTML = cardInformation.name;
-  firstParagraph.innerHTML = cardInformation.description;
-  firstTechcss.innerHTML = cardInformation.tech[0];
-  firstTechhtm.innerHTML = cardInformation.tech[1];
-  firstTechboot.innerHTML = cardInformation.tech[2];
-  firstTechrub.innerHTML = cardInformation.tech[3];
+  heading.innerHTML = cardInformation.firstCards.name;
+  firstParagraph.innerHTML = cardInformation.firstCards.description;
+  firstTechcss.innerHTML = cardInformation.firstCards.tech[0];
+  firstTechhtm.innerHTML = cardInformation.firstCards.tech[1];
+  firstTechboot.innerHTML = cardInformation.firstCards.tech[2];
+  firstTechrub.innerHTML = cardInformation.firstCards.tech[3];
   firstButton.innerHTML = "See Project";
 
   //append children
@@ -92,8 +102,8 @@ function firstCards() {
   div.appendChild(imgDiv);
   div.appendChild(sideDescription);
   imgDiv.appendChild(mobileImage);
-  sideDescription.appendChild(heading);
-  sideDescription.appendChild(firstParagraph);
+  badgediv.appendChild(heading);
+  badgediv.appendChild(firstParagraph);
   sideDescription.appendChild(badgediv);
   badgediv.appendChild(firstList);
   firstList.appendChild(firstTechcss);
@@ -106,8 +116,67 @@ function firstCards() {
 //call the functions
 firstCards();
 
+//Create all the other cards
+function otherCards() {
+  //create the elements
+  const section = document.createElement('section');  //create the housing section
+  const div = document.createElement('div');
+  const description = document.createElement('div');
+  const heading = document.createElement('h3'); //create title
+  const text = document.createElement('p');
+  const firstList = document.createElement('ul');
+  const firstTechhtm = document.createElement('l1');
+  const firstTechboot = document.createElement('l1');
+  const firstTechrub = document.createElement('l1');
+  const firstButton = document.createElement('button');
+
+
+
+  //set ids and classes
+  section.id = 'sec';
+  div.id = 'grid-card';
+  description.id = 'descp';
+  description.className = 'description';
+  // heading.className = 'head-other';
+  // text.className = 'body-other';
+  firstList.className = 'buttons';
+  firstTechhtm.className = 'button1 buthtm';
+  firstTechboot.className = 'button1 butboot';
+  firstTechrub.className = 'button1 butrub';
+  firstButton.className = 'but-see but-see-width';
+
+
+
+  //set attributes
+  heading.innerHTML = cardInformation.otherCards.name;
+  text.innerHTML = cardInformation.otherCards.description;
+  firstTechhtm.innerHTML = cardInformation.otherCards.tech[0];
+  firstTechboot.innerHTML = cardInformation.otherCards.tech[1];
+  firstTechrub.innerHTML = cardInformation.otherCards.tech[2];
+  firstButton.innerHTML = "See Project";
+
+
+  //apppend children
+  portfolioSection.appendChild(section);
+  section.appendChild(div);
+  //for loop to create the 6 cards
+  for (let i = 0; i <= 5; i++) {
+    div.appendChild(description);
+    description.appendChild(heading);
+    description.appendChild(text);
+    description.appendChild(firstList);
+    firstList.appendChild(firstTechhtm);
+    firstList.appendChild(firstTechboot);
+    firstList.appendChild(firstTechrub);
+    description.appendChild(firstButton);
+    console.log("Called")
+  }
+}
+
+otherCards();
+otherCards();
+
 // Create event listeners
-portfolioSection.addEventListener('click', addCards);
 humbergerMenu.addEventListener('click', menuToogle);
 navLinks.forEach(function (navItems) {
   navItems.addEventListener('click', menuToogle);
