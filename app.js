@@ -12,6 +12,7 @@ const emailInput = document.querySelector('#email');
 const fullName = document.querySelector('#fullname');
 const textArea = document.querySelector('#textarea');
 
+
 // Create the functions
 function menuToogle() {
   if (!displayMenu) {
