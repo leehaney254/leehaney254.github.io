@@ -48,6 +48,13 @@ form.addEventListener('submit', (e) => {
     errorSecton.innerText = 'Email should be in lower-case';
   }
   else {
-    //here
-  }
-});
+    let storedObject = {};
+    storedObject.fullName = nameContent;
+//     storedObject.emailInput = emailContent;
+//     storedObject.textArea = textContent;
+//     let serializedObject = JSON.stringify(storedObject);
+//     localStorage.setItem("userData", serializedObject);
+//     console.log(localStorage);
+//     e.preventDefault();
+//   }
+// });
