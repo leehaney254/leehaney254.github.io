@@ -12,7 +12,6 @@ const emailInput = document.querySelector('#email');
 const fullName = document.querySelector('#fullname');
 const textArea = document.querySelector('#textarea');
 
-
 // Create the functions
 function menuToogle() {
   if (!displayMenu) {
@@ -46,15 +45,13 @@ form.addEventListener('submit', (e) => {
   if (testCondition.test(emailContent)) {
     e.preventDefault();
     errorSecton.innerText = 'Email should be in lower-case';
-  }
-  else {
-    let storedObject = {};
+  } else {
+    const storedObject = {};
     storedObject.fullName = nameContent;
     storedObject.emailInput = emailContent;
     storedObject.textArea = textContent;
-    let serializedObject = JSON.stringify(storedObject);
-    localStorage.setItem("userData", serializedObject);
-    console.log(localStorage);
+    const serializedObject = JSON.stringify(storedObject);
+    localStorage.setItem('userData', serializedObject);
     e.preventDefault();
   }
 });
