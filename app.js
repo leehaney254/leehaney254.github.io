@@ -6,7 +6,9 @@ const cancelImage = document.querySelector('#cancel-menu');
 const showMenu = document.querySelector('#nav-link'); // select the menu options
 const hideMail = document.querySelector('#hide-mail');
 const navLinks = document.querySelectorAll('.anc-decor');
-const form = document.querySelector('form')
+const form = document.querySelector('#form'); //select the form
+const errorSecton = document.querySelector('#errorMessage');
+const emailInput = document.querySelector('#email');
 
 
 // Create the functions
@@ -33,8 +35,10 @@ navLinks.forEach(function (navItems) {
   navItems.addEventListener('click', menuToogle);
 })
 
-form.addEventListener('submit', () => {
-  e.preventDefault();
+form.addEventListener('submit', (e) => {
+  const emailContent = emailInput.value;
+  const testCondition = /[A-Z]/;
+  //Here
 })
 
 
