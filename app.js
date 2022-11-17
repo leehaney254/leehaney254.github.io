@@ -6,6 +6,8 @@ const cancelImage = document.querySelector('#cancel-menu');
 const showMenu = document.querySelector('#nav-link'); // select the menu options
 const hideMail = document.querySelector('#hide-mail');
 const navLinks = document.querySelectorAll('.anc-decor');
+const form = document.querySelector('form')
+
 
 // Create the functions
 function menuToogle() {
@@ -30,3 +32,9 @@ humbergerMenu.addEventListener('click', menuToogle);
 for (let i = 0; i <= navLinks.length; i++) {
   navLinks[i].addEventListener('click', menuToogle);
 }
+
+form.addEventListener('submit', () => {
+  e.preventDefault();
+})
+
+
