@@ -11,6 +11,11 @@ label {
   display: none;
 }
 
+#errorMessage {
+  color: red;
+  font-family: "Roboto", sans-serif;
+}
+
 #nav-link {
   position: fixed;
   top: 0;

@@ -6,6 +6,9 @@ const cancelImage = document.querySelector('#cancel-menu');
 const showMenu = document.querySelector('#nav-link'); // select the menu options
 const hideMail = document.querySelector('#hide-mail');
 const navLinks = document.querySelectorAll('.anc-decor');
+const form = document.querySelector('#form'); // select the form
+const errorSecton = document.querySelector('#errorMessage');
+const emailInput = document.querySelector('#email');
 
 // Create the functions
 function menuToogle() {
@@ -27,6 +30,16 @@ function menuToogle() {
 
 // Create event listeners
 humbergerMenu.addEventListener('click', menuToogle);
-for (let i = 0; i <= navLinks.length; i++) {
-  navLinks[i].addEventListener('click', menuToogle);
-}
+navLinks.forEach((navItems) => {
+  navItems.addEventListener('click', menuToogle);
+});
+
+form.addEventListener('submit', (e) => {
+  const emailContent = emailInput.value;
+  const testCondition = /[A-Z]/;
+
+  if (testCondition.test(emailContent)) {
+    e.preventDefault();
+    errorSecton.innerText = 'Email should be in lower-case';
+  }
+});
