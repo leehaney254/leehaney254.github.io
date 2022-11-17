@@ -29,9 +29,9 @@ function menuToogle() {
 
 // Create event listeners
 humbergerMenu.addEventListener('click', menuToogle);
-for (let i = 0; i <= navLinks.length; i++) {
-  navLinks[i].addEventListener('click', menuToogle);
-}
+navLinks.forEach(function (navItems) {
+  navItems.addEventListener('click', menuToogle);
+})
 
 form.addEventListener('submit', () => {
   e.preventDefault();
