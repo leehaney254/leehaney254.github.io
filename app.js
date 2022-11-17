@@ -40,6 +40,7 @@ form.addEventListener('submit', (e) => {
   const testCondition = /[A-Z]/;
 
   if (testCondition.test(emailContent)) {
+    e.preventDefault(); //prevent the form from submiting
 })
 
 
