@@ -46,12 +46,21 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     errorSecton.innerText = 'Email should be in lower-case';
   } else {
+    // store the data
     const storedObject = {};
     storedObject.fullName = nameContent;
     storedObject.emailInput = emailContent;
     storedObject.textArea = textContent;
     const serializedObject = JSON.stringify(storedObject);
     localStorage.setItem('userData', serializedObject);
-    e.preventDefault();
   }
 });
+
+function fillData() {
+  const desirializedObject = JSON.parse(localStorage.getItem('userData'));
+  fullName.value = desirializedObject.fullName;
+  emailInput.value = desirializedObject.emailInput;
+  textArea.value = desirializedObject.textArea;
+}
+
+window.addEventListener('load', fillData);
