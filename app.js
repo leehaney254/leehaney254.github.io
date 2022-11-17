@@ -53,4 +53,8 @@ form.addEventListener('submit', (e) => {
     storedObject.emailInput = emailContent;
     storedObject.textArea = textContent;
     let serializedObject = JSON.stringify(storedObject);
-
+    localStorage.setItem("userData", serializedObject);
+    console.log(localStorage);
+    e.preventDefault();
+  }
+});
