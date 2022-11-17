@@ -38,7 +38,8 @@ navLinks.forEach(function (navItems) {
 form.addEventListener('submit', (e) => {
   const emailContent = emailInput.value;
   const testCondition = /[A-Z]/;
-  //Here
+
+  if (testCondition.test(emailContent)) {
 })
 
 
