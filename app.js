@@ -50,11 +50,7 @@ form.addEventListener('submit', (e) => {
   else {
     let storedObject = {};
     storedObject.fullName = nameContent;
-//     storedObject.emailInput = emailContent;
-//     storedObject.textArea = textContent;
-//     let serializedObject = JSON.stringify(storedObject);
-//     localStorage.setItem("userData", serializedObject);
-//     console.log(localStorage);
-//     e.preventDefault();
-//   }
-// });
+    storedObject.emailInput = emailContent;
+    storedObject.textArea = textContent;
+    let serializedObject = JSON.stringify(storedObject);
+
