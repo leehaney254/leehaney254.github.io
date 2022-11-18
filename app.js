@@ -77,7 +77,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
     image: "url('./assets/rest-card.png')",
@@ -87,7 +87,7 @@ const otherProjects = [
   },
 
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -96,7 +96,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -105,7 +105,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -114,7 +114,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -123,7 +123,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -143,18 +143,28 @@ function firstCard(cardinfo) {
   button = document.createElement('button');
 
   //give attributes
-  title.innerText = cardinfo.name;
+  title.innerHTML = cardinfo.name;
   infomation.innerText = cardinfo.description;
   let tech = cardinfo.technologies;
+
+  //loop through to create badges
   tech.forEach((listItems) => {
     let li = document.createElement('li');
     li.innerText = listItems;
+    if (cardinfo.name == otherProjects[0].name) {
+      li.classList.add('firstBadge');
+    } else {
+      li.classList.add('otherBadge');
+    }
     badgeList.appendChild(li);
   });
   button.innerText = 'See Project';
 
   //Give classes and id's
+  container.classList.add('cardSize');
+  title.classList.add('title');
   badgeList.classList.add('badgeStyle');
+  button.classList.add('button');
 
   //check if its the other cards and add it as a background image
   if (cardinfo.name == otherProjects[0].name) {
@@ -165,10 +175,17 @@ function firstCard(cardinfo) {
     //add styles to the first card
     title.setAttribute("id", "firstTitle");
     infomation.setAttribute("id", "firstParagragh");
+    button.setAttribute("id", "firstBtnPad");
 
     container.appendChild(firstImage);
   } else {
+    //add style to other cards
     container.style.backgroundImage = cardinfo.image;
+    title.classList.add('otherTitle');
+    infomation.classList.add('paragraph');
+    container.classList.add('backCardImg');
+    button.classList.add('otherCardBtn', 'marginTopOther');
+    infomation.style.width = "295px";
   }
 
   //attach to node
@@ -183,6 +200,8 @@ function firstCard(cardinfo) {
 function buildCards() {
   portfolio = document.querySelector('#dynamicPortfolio');
   cardOne = document.createElement('div');
+
+  portfolio.setAttribute("id", "cardGrid");
 
   //add the cards dynamically
   otherProjects.forEach((cards) => {

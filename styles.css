@@ -7,13 +7,31 @@ label {
   display: none;
 }
 
-#firstTitle {
+.title {
   font-family: 'Crete Round';
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
   line-height: 44px;
+}
+
+#firstTitle {
   color: #091E42;
+}
+
+.otherTitle {
+  color: #fff;
+  margin: 85px 0 0 15px;
+}
+
+.paragraph {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  margin-left: 15px;
 }
 
 #firstParagragh {
@@ -28,7 +46,72 @@ label {
 .badgeStyle {
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+}
+
+.firstBadge {
+  border: 1px solid #8993A4;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #091E42;
+  padding: 10px 12px;
+}
+
+.otherBadge {
+  background: rgba(255, 255, 255, 0.24);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+  padding: 10px 12px;
+}
+
+.backCardImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cardGrid {
+  display: grid;
+  grid-template-columns: 375px;
+  grid-row-gap: 24px;
+}
+
+.cardSize {
+  max-width: 375px;
+  max-height: 568px;
+  margin: 15px 24px;
+}
+
+.marginTopOther {
+  margin-top: 20px;
+}
+
+#firstBtnPad {
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.otherCardBtn {
+  width: 327px;
+  height: 48px;
+}
+
+.button {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  background: #FF6B00;
+  border: none;
 }
 
 #hide-mail {
