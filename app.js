@@ -9,6 +9,8 @@ const navLinks = document.querySelectorAll('.anc-decor');
 const form = document.querySelector('#form'); // select the form
 const errorSecton = document.querySelector('#errorMessage');
 const emailInput = document.querySelector('#email');
+const fullName = document.querySelector('#fullname');
+const textArea = document.querySelector('#textarea');
 
 // Create the functions
 function menuToogle() {
@@ -36,10 +38,29 @@ navLinks.forEach((navItems) => {
 
 form.addEventListener('submit', (e) => {
   const emailContent = emailInput.value;
+  const nameContent = fullName.value;
+  const textContent = textArea.value;
   const testCondition = /[A-Z]/;
 
   if (testCondition.test(emailContent)) {
     e.preventDefault();
     errorSecton.innerText = 'Email should be in lower-case';
+  } else {
+    // store the data
+    const storedObject = {};
+    storedObject.fullName = nameContent;
+    storedObject.emailInput = emailContent;
+    storedObject.textArea = textContent;
+    const serializedObject = JSON.stringify(storedObject);
+    localStorage.setItem('userData', serializedObject);
   }
 });
+
+function fillData() {
+  const desirializedObject = JSON.parse(localStorage.getItem('userData'));
+  fullName.value = desirializedObject.fullName;
+  emailInput.value = desirializedObject.emailInput;
+  textArea.value = desirializedObject.textArea;
+}
+
+window.addEventListener('load', fillData);
