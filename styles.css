@@ -7,6 +7,30 @@ label {
   display: none;
 }
 
+#firstTitle {
+  font-family: 'Crete Round';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: #091E42;
+}
+
+#firstParagragh {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #091E42;
+}
+
+.badgeStyle {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
 #hide-mail {
   display: none;
 }
@@ -199,68 +223,8 @@ ul {
   color: #1c1a19;
 }
 
-#sec {
-  display: grid;
-  grid-template-rows: 386px 386px 386px 386px 386px 386px;
-  grid-gap: 24px 0;
-}
-
-.card {
-  width: 327px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 24px 0 24px;
-}
-
-.other-cards {
-  background-image: url("./assets/rest-card.png");
-  background-repeat: no-repeat;
-}
-
-#head1 {
-  height: 36px;
-  font-family: "Crete Round", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #091e42;
-}
-
-.head-other {
-  width: 295px;
-  height: 81px;
-  font-family: "Crete Round", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #fff;
-}
-
-.body-other {
-  width: 295px;
-  height: 87px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #fff;
-}
-
 .no-decor {
   text-decoration: none;
-}
-
-#contents1 {
-  height: 147px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #091e42;
 }
 
 .buttons {
@@ -294,22 +258,6 @@ ul {
   border: none;
 }
 
-.butcss {
-  width: 49px;
-}
-
-.buthtm {
-  width: 56px;
-}
-
-.butboot {
-  width: 95px;
-}
-
-.butrub {
-  width: 61px;
-}
-
 #butsee1 {
   height: 48px;
   margin-top: 10px;
@@ -331,10 +279,6 @@ ul {
   letter-spacing: 0.03em;
   color: #fff;
   border: none;
-}
-
-.description {
-  margin-left: 10px;
 }
 
 #about-me {
@@ -627,18 +571,6 @@ button:hover {
     width: 60%;
   }
 
-  #card {
-    display: flex;
-    flex-direction: row;
-    margin-left: 140px;
-  }
-
-  #grid-card {
-    row-gap: 30px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-  }
-
   #margin-tops {
     margin-top: auto;
   }
@@ -659,19 +591,6 @@ button:hover {
   #form-foot {
     display: flex;
     justify-content: space-around;
-  }
-
-  #descp {
-    padding: 0 20px;
-    display: none;
-  }
-
-  #sec {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 435px 435px;
-    grid-row-gap: 20px;
-    margin: 30px 20px 0 120px;
   }
 
   form {
@@ -705,12 +624,6 @@ button:hover {
     margin-top: 0;
   }
 
-  .first-card {
-    background-image: url(./assets/Img\ Placeholder.png);
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
   .disp-but {
     display: none;
   }
@@ -719,23 +632,11 @@ button:hover {
     margin-bottom: 15px;
   }
 
-  .teni-img {
-    background-image: url(./assets/cardimg.png);
-  }
-
-  .av-img {
-    background-image: url(./assets/cardimg1.png);
-  }
-
   #rec-image {
     display: none;
   }
 
   #large-image {
     display: inline;
-  }
-
-  #descp-side {
-    margin-left: 10px;
   }
 }

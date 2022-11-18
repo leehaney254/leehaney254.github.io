@@ -80,7 +80,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -90,7 +90,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -99,7 +99,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -108,7 +108,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -117,7 +117,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -126,7 +126,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: './assets/rest-card.png',
+    image: "url('./assets/rest-card.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -143,8 +143,6 @@ function firstCard(cardinfo) {
   button = document.createElement('button');
 
   //give attributes
-  firstImage.setAttribute('src', cardinfo.image);
-  firstImage.setAttribute('alt', 'Mobile version card');
   title.innerText = cardinfo.name;
   infomation.innerText = cardinfo.description;
   let tech = cardinfo.technologies;
@@ -155,8 +153,25 @@ function firstCard(cardinfo) {
   });
   button.innerText = 'See Project';
 
+  //Give classes and id's
+  badgeList.classList.add('badgeStyle');
+
+  //check if its the other cards and add it as a background image
+  if (cardinfo.name == otherProjects[0].name) {
+    //create the first image
+    firstImage.setAttribute('src', cardinfo.image);
+    firstImage.setAttribute('alt', 'Mobile version card');
+
+    //add styles to the first card
+    title.setAttribute("id", "firstTitle");
+    infomation.setAttribute("id", "firstParagragh");
+
+    container.appendChild(firstImage);
+  } else {
+    container.style.backgroundImage = cardinfo.image;
+  }
+
   //attach to node
-  container.appendChild(firstImage);
   container.appendChild(title);
   container.appendChild(infomation);
   container.appendChild(badgeList);
@@ -169,6 +184,7 @@ function buildCards() {
   portfolio = document.querySelector('#dynamicPortfolio');
   cardOne = document.createElement('div');
 
+  //add the cards dynamically
   otherProjects.forEach((cards) => {
     portfolio.appendChild(firstCard(cards));
   });
