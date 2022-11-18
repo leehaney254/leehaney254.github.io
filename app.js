@@ -133,6 +133,8 @@ const otherProjects = [
   },
 ];
 
+const media = window.matchMedia("(min-width: 768px)")
+
 function firstCard(cardinfo) {
   //crate elements
   container = document.createElement('div');
@@ -210,4 +212,3 @@ function buildCards() {
 }
 
 buildCards();
-
