@@ -64,3 +64,115 @@ function fillData() {
 }
 
 window.addEventListener('load', fillData);
+
+//create the card information
+const otherProjects = [
+  {
+    name: 'Multi-Post Stories',
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
+    image: './assets/first-card.png',
+    technologies: ['css', 'html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+];
+
+function firstCard(cardinfo) {
+  //crate elements
+  container = document.createElement('div');
+  firstImage = document.createElement('img');
+  title = document.createElement('h3');
+  infomation = document.createElement('p');
+  badgeList = document.createElement('ul');
+  button = document.createElement('button');
+
+  //give attributes
+  firstImage.setAttribute('src', cardinfo.image);
+  firstImage.setAttribute('alt', 'Mobile version card');
+  title.innerText = cardinfo.name;
+  infomation.innerText = cardinfo.description;
+  let tech = cardinfo.technologies;
+  tech.forEach((listItems) => {
+    let li = document.createElement('li');
+    li.innerText = listItems;
+    badgeList.appendChild(li);
+  });
+  button.innerText = 'See Project';
+
+  //attach to node
+  container.appendChild(firstImage);
+  container.appendChild(title);
+  container.appendChild(infomation);
+  container.appendChild(badgeList);
+  container.appendChild(button)
+  return container
+}
+
+
+function buildCards() {
+  portfolio = document.querySelector('#dynamicPortfolio');
+  cardOne = document.createElement('div');
+
+  otherProjects.forEach((cards) => {
+    portfolio.appendChild(firstCard(cards));
+  });
+}
+
+buildCards();
+
