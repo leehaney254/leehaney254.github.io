@@ -47,7 +47,15 @@ label {
 .badgeStyle {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.removeCard {
+  display: none;
+}
+
+#popImg {
+  height: '24px';
 }
 
 .firstBadge {
@@ -59,6 +67,7 @@ label {
   line-height: 20px;
   color: #091E42;
   padding: 10px 12px;
+  margin: 0 5px;
 }
 
 .otherBadge {
@@ -83,6 +92,10 @@ label {
   grid-row-gap: 24px;
 }
 
+#cardDeskGrid {
+  grid-template-columns: 375px 375px 375px;
+}
+
 .cardSize {
   max-width: 375px;
   max-height: 568px;
@@ -91,6 +104,10 @@ label {
 
 .marginTopOther {
   margin-top: 20px;
+}
+
+.cardImages {
+  background-image: url('./assets/rest-card.png');
 }
 
 #firstBtnPad {
@@ -152,6 +169,11 @@ label {
 
 .flexs {
   display: flex;
+}
+
+.arrange {
+  justify-content: space-around;
+  align-items: center;
 }
 
 #space-down {
@@ -722,5 +744,10 @@ button:hover {
 
   #large-image {
     display: inline;
+  }
+
+  #cardGrid {
+    display: grid;
+    grid-template-columns: 375px 375px 375px;
   }
 }

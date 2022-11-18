@@ -72,6 +72,7 @@ const otherProjects = [
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
     image: './assets/first-card.png',
+    desktopImg: './assets/large.png',
     technologies: ['css', 'html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -80,7 +81,8 @@ const otherProjects = [
     name: 'Profesional Art<br> Printing Data',
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
-    image: "url('./assets/rest-card.png')",
+    image: './assets/rest-card.png',
+    desktopImg: './assets/Img\ Placeholder.png',
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -90,7 +92,28 @@ const otherProjects = [
     name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: "url('./assets/rest-card.png')",
+    image: './assets/rest-card.png',
+    desktopImg: "url('./assets/cardimg1.png')",
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art<br> Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/cardimg.png',
+    desktopImg: './assets/rest-card.png',
+    technologies: ['html', 'bootstrap', 'Ruby'],
+    liveLink: '#',
+    sourceLink: '#',
+  },
+  {
+    name: 'Profesional Art<br> Printing Data',
+    description:
+      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
+    image: './assets/rest-card.png',
+    desktopImg: "url('./assets/cardimg.png')",
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -100,6 +123,7 @@ const otherProjects = [
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
+    desktopImg: './assets/cardimg1.png',
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -108,32 +132,13 @@ const otherProjects = [
     name: 'Profesional Art<br> Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: "url('./assets/rest-card.png')",
-    technologies: ['html', 'bootstrap', 'Ruby'],
-    liveLink: '#',
-    sourceLink: '#',
-  },
-  {
-    name: 'Profesional Art<br> Printing Data',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: "url('./assets/rest-card.png')",
-    technologies: ['html', 'bootstrap', 'Ruby'],
-    liveLink: '#',
-    sourceLink: '#',
-  },
-  {
-    name: 'Profesional Art<br> Printing Data',
-    description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: "url('./assets/rest-card.png')",
+    image: './assets/rest-card.png',
+    desktopImg: './assets/rest-card.png',
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
   },
 ];
-
-const media = window.matchMedia("(min-width: 768px)")
 
 function firstCard(cardinfo) {
   //crate elements
@@ -182,7 +187,7 @@ function firstCard(cardinfo) {
     container.appendChild(firstImage);
   } else {
     //add style to other cards
-    container.style.backgroundImage = cardinfo.image;
+    container.classList.add('cardImages');
     title.classList.add('otherTitle');
     infomation.classList.add('paragraph');
     container.classList.add('backCardImg');
@@ -203,6 +208,7 @@ function buildCards() {
   portfolio = document.querySelector('#dynamicPortfolio');
   cardOne = document.createElement('div');
 
+
   portfolio.setAttribute("id", "cardGrid");
 
   //add the cards dynamically
@@ -212,3 +218,70 @@ function buildCards() {
 }
 
 buildCards();
+
+popContainer = document.querySelector('#popUp');
+function PopUp(cardinfo) {
+  popDiv = document.createElement('div');
+  popTitle = document.createElement('h2');
+  popImg = document.createElement('img');
+  let tech = cardinfo.technologies;
+  badgeList = document.createElement('ul');
+  firstImage = document.createElement('img');
+  flexDiv = document.createElement('div');
+  info = document.createElement('p');
+  infoDiv = document.createElement('div');
+  seeLive = document.createElement('button');
+  seesource = document.createElement('button');
+
+  //give class
+  badgeList.classList.add('badgeStyle');
+  firstImage.setAttribute('src', cardinfo.image);
+  firstImage.setAttribute('alt', 'Pop-up image');
+  popDiv.classList.add('flexs', 'arrange');
+  popImg.setAttribute('id', 'popImg');
+
+  //give attributtes
+  popTitle.innerText = cardinfo.name;
+  popImg.setAttribute('src', './assets/iconCancel.png');
+  info.innerHTML = cardinfo.description;
+  seeLive.innerText = 'See Live';
+  seesource.innerText = 'See Source';
+
+  //loop through to create badges
+  tech.forEach((listItems) => {
+    let li = document.createElement('li');
+    li.innerText = listItems;
+    if (cardinfo.name == otherProjects[0].name) {
+      li.classList.add('firstBadge');
+    } else {
+      li.classList.add('otherBadge');
+    }
+    badgeList.appendChild(li);
+  });
+
+
+  //add node
+  popContainer.appendChild(popDiv);
+  popDiv.appendChild(popTitle);
+  popDiv.appendChild(popImg);
+  popContainer.appendChild(badgeList);
+  popContainer.appendChild(flexDiv);
+  flexDiv.appendChild(firstImage);
+  flexDiv.appendChild(infoDiv);
+  infoDiv.appendChild(info);
+  infoDiv.appendChild(seeLive);
+  infoDiv.appendChild(seesource);
+}
+
+popupButton = document.querySelectorAll('button');
+popupButton.forEach((btn, i) => {
+  btn.addEventListener('click', function click() {
+    PopUp(otherProjects[i])
+  });
+});
+
+hidePop = document.queryCommandValue('popImg');
+hidePop.addEventListener('click', function click() {
+  console.log('clicked');
+  popContainer.classList.add('removeCard');
+});
