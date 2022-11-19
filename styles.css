@@ -16,7 +16,7 @@ label {
 }
 
 #dynamicPortfolio {
-  margin: 0 24px 0 24px;
+  margin: 0 24px 0 10px;
 }
 
 #firstTitle {
@@ -720,6 +720,11 @@ button:hover {
     padding-bottom: 200px;
   }
 
+  .popSize {
+    width: 1156px;
+    height: 631px;
+  }
+
   #conts {
     display: flex;
     flex-direction: column;
@@ -732,6 +737,14 @@ button:hover {
     padding: 0;
     margin: 0;
     width: 60px;
+  }
+
+  .popSec {
+    display: flex;
+  }
+
+  #popImg {
+    margin-left: 500px;
   }
 
   #heading-second {

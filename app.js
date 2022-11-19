@@ -12,6 +12,7 @@ const emailInput = document.querySelector('#email');
 const fullName = document.querySelector('#fullname');
 const textArea = document.querySelector('#textarea');
 
+
 // Create the functions
 function menuToogle() {
   if (!displayMenu) {
@@ -238,6 +239,7 @@ popContainer = document.querySelector('#popUp');
 
 function PopUp(cardinfo) {
   popDiv = document.createElement('div');
+  disDiv = document.createElement('div');
   popTitle = document.createElement('h2');
   popImg = document.createElement('img');
   let tech = cardinfo.technologies;
@@ -252,17 +254,17 @@ function PopUp(cardinfo) {
   liveIcon = document.createElement('img');
 
   //give class
-  popContainer.classList.add('popSize');
+  disDiv.classList.add('popSize');
   popTitle.classList.add('popHead');
   info.classList.add('popText');
   badgeList.classList.add('badgeStyle');
   firstImage.setAttribute('src', cardinfo.image);
   firstImage.setAttribute('alt', 'Pop-up image');
   popDiv.classList.add('flexs', 'arrange');
-  popImg.setAttribute('id', 'popImg');
   seeLive.classList.add('popButton');
   seesource.classList.add('popButton', 'sourceLeft');
   flexDiv.classList.add('popSec');
+  popImg.setAttribute('id', 'popImg');
 
   //give attributtes
   popTitle.innerText = cardinfo.name;
@@ -287,11 +289,12 @@ function PopUp(cardinfo) {
 
 
   //add node
-  popContainer.appendChild(popDiv);
+  popContainer.appendChild(disDiv);
+  disDiv.appendChild(popDiv);
   popDiv.appendChild(popTitle);
   popDiv.appendChild(popImg);
-  popContainer.appendChild(badgeList);
-  popContainer.appendChild(flexDiv);
+  disDiv.appendChild(badgeList);
+  disDiv.appendChild(flexDiv);
   flexDiv.appendChild(firstImage);
   flexDiv.appendChild(infoDiv);
   infoDiv.appendChild(info);
@@ -299,6 +302,12 @@ function PopUp(cardinfo) {
   infoDiv.appendChild(seesource);
   seesource.appendChild(gitIcon);
   seeLive.appendChild(liveIcon);
+
+  //listen for close button
+  let hidePop = document.querySelector('#popImg');
+  hidePop.addEventListener('click', () => {
+    disDiv.classList.add('removeCard');
+  })
 }
 
 popupButton = document.querySelectorAll('button');
@@ -308,9 +317,5 @@ popupButton.forEach((btn, i) => {
   });
 });
 
-let hidePop = document.querySelector('#popImg');
-if (hidePop) {
-  hidepop.addEventListener('click', () => {
-    console.log('Clicked');
-  })
-}
+
+
