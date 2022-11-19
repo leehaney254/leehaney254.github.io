@@ -78,7 +78,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
     image: './assets/rest-card.png',
@@ -89,7 +89,7 @@ const otherProjects = [
   },
 
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: './assets/rest-card.png',
@@ -99,7 +99,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: './assets/cardimg.png',
@@ -109,7 +109,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: './assets/rest-card.png',
@@ -119,7 +119,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: "url('./assets/rest-card.png')",
@@ -129,7 +129,7 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art<br> Printing Data',
+    name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
     image: './assets/rest-card.png',
@@ -144,10 +144,12 @@ function firstCard(cardinfo) {
   //crate elements
   container = document.createElement('div');
   firstImage = document.createElement('img');
+  deskImg = document.createElement('img');
   title = document.createElement('h3');
   infomation = document.createElement('p');
   badgeList = document.createElement('ul');
   button = document.createElement('button');
+  firstsplit = document.createElement('div');
 
   //give attributes
   title.innerHTML = cardinfo.name;
@@ -178,13 +180,20 @@ function firstCard(cardinfo) {
     //create the first image
     firstImage.setAttribute('src', cardinfo.image);
     firstImage.setAttribute('alt', 'Mobile version card');
+    firstImage.setAttribute("id", "remDesk");
+    deskImg.setAttribute('src', cardinfo.desktopImg);
+    deskImg.setAttribute('alt', 'Desktop version card');
+    deskImg.setAttribute("id", "remMob");
+
 
     //add styles to the first card
     title.setAttribute("id", "firstTitle");
     infomation.setAttribute("id", "firstParagragh");
     button.setAttribute("id", "firstBtnPad");
+    firstsplit.classList.add('spaceLefts')
 
     container.appendChild(firstImage);
+    container.appendChild(deskImg)
   } else {
     //add style to other cards
     container.classList.add('cardImages');
@@ -196,10 +205,11 @@ function firstCard(cardinfo) {
   }
 
   //attach to node
-  container.appendChild(title);
-  container.appendChild(infomation);
-  container.appendChild(badgeList);
-  container.appendChild(button)
+  container.appendChild(firstsplit);
+  firstsplit.appendChild(title);
+  firstsplit.appendChild(infomation);
+  firstsplit.appendChild(badgeList);
+  firstsplit.appendChild(button)
   return container
 }
 
@@ -209,12 +219,17 @@ function buildCards() {
   cardOne = document.createElement('div');
 
 
-  portfolio.setAttribute("id", "cardGrid");
+  cardOne.setAttribute("id", "cardGrid");
 
   //add the cards dynamically
   otherProjects.forEach((cards) => {
-    portfolio.appendChild(firstCard(cards));
+    if (cards.name == otherProjects[0].name) {
+      portfolio.appendChild(firstCard(cards));
+    } else {
+      cardOne.appendChild(firstCard(cards));
+    }
   });
+  portfolio.appendChild(cardOne);
 }
 
 buildCards();
@@ -246,7 +261,8 @@ function PopUp(cardinfo) {
   popDiv.classList.add('flexs', 'arrange');
   popImg.setAttribute('id', 'popImg');
   seeLive.classList.add('popButton');
-  seesource.classList.add('popButton');
+  seesource.classList.add('popButton', 'sourceLeft');
+  flexDiv.classList.add('popSec');
 
   //give attributtes
   popTitle.innerText = cardinfo.name;
@@ -285,8 +301,6 @@ function PopUp(cardinfo) {
   seeLive.appendChild(liveIcon);
 }
 
-//Here place it
-
 popupButton = document.querySelectorAll('button');
 popupButton.forEach((btn, i) => {
   btn.addEventListener('click', function click() {
@@ -294,8 +308,9 @@ popupButton.forEach((btn, i) => {
   });
 });
 
-hidePop = document.queryCommandValue('popImg');
-hidePop.addEventListener('click', function close() {
-  console.log('clicked');
-  popContainer.classList.add('removeCard');
-});
+let hidePop = document.querySelector('#popImg');
+if (hidePop) {
+  hidepop.addEventListener('click', () => {
+    console.log('Clicked');
+  })
+}

@@ -15,6 +15,10 @@ label {
   line-height: 44px;
 }
 
+#dynamicPortfolio {
+  margin: 0 24px 0 24px;
+}
+
 #firstTitle {
   color: #091E42;
 }
@@ -76,6 +80,11 @@ label {
   width: 343px;
   height: 718px;
   padding: 16px;
+  position: fixed;
+  top: 0;
+  z-index: 98;
+  background-color: white;
+  transition: transform 0.1s;
 }
 
 .firstBadge {
@@ -99,6 +108,7 @@ label {
   line-height: 20px;
   color: #fff;
   padding: 10px 12px;
+  margin: 0 0 0 10px;
 }
 
 .backCardImg {
@@ -174,6 +184,10 @@ label {
 
 .hideMenu {
   transform: translateY(-100%);
+}
+
+.sourceLeft {
+  margin-left: 35px;
 }
 
 #hum-menu {
@@ -369,6 +383,10 @@ ul {
   font-size: 40px;
   line-height: 52px;
   color: #1c1a19;
+}
+
+#remMob {
+  display: none;
 }
 
 .no-decor {
@@ -636,6 +654,14 @@ button:hover {
     margin-top: 10px;
   }
 
+  #remDesk {
+    display: none;
+  }
+
+  #remMob {
+    display: inline;
+  }
+
   #texttwo {
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -749,6 +775,14 @@ button:hover {
   #form-ul {
     align-items: flex-start;
     width: 100%;
+  }
+
+  .cardSize {
+    display: flex;
+  }
+
+  .spaceLefts {
+    margin-left: 15px;
   }
 
   #form-ul li {
