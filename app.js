@@ -220,6 +220,7 @@ function buildCards() {
 buildCards();
 
 popContainer = document.querySelector('#popUp');
+
 function PopUp(cardinfo) {
   popDiv = document.createElement('div');
   popTitle = document.createElement('h2');
@@ -232,13 +233,20 @@ function PopUp(cardinfo) {
   infoDiv = document.createElement('div');
   seeLive = document.createElement('button');
   seesource = document.createElement('button');
+  gitIcon = document.createElement('img');
+  liveIcon = document.createElement('img');
 
   //give class
+  popContainer.classList.add('popSize');
+  popTitle.classList.add('popHead');
+  info.classList.add('popText');
   badgeList.classList.add('badgeStyle');
   firstImage.setAttribute('src', cardinfo.image);
   firstImage.setAttribute('alt', 'Pop-up image');
   popDiv.classList.add('flexs', 'arrange');
   popImg.setAttribute('id', 'popImg');
+  seeLive.classList.add('popButton');
+  seesource.classList.add('popButton');
 
   //give attributtes
   popTitle.innerText = cardinfo.name;
@@ -246,6 +254,8 @@ function PopUp(cardinfo) {
   info.innerHTML = cardinfo.description;
   seeLive.innerText = 'See Live';
   seesource.innerText = 'See Source';
+  gitIcon.setAttribute('src', './assets/Icon\ -GitHub.png');
+  liveIcon.setAttribute('src', './assets/Icon\ -\ Export.png')
 
   //loop through to create badges
   tech.forEach((listItems) => {
@@ -271,17 +281,8 @@ function PopUp(cardinfo) {
   infoDiv.appendChild(info);
   infoDiv.appendChild(seeLive);
   infoDiv.appendChild(seesource);
+  seesource.appendChild(gitIcon);
+  seeLive.appendChild(liveIcon);
 }
 
-popupButton = document.querySelectorAll('button');
-popupButton.forEach((btn, i) => {
-  btn.addEventListener('click', function click() {
-    PopUp(otherProjects[i])
-  });
-});
-
-hidePop = document.queryCommandValue('popImg');
-hidePop.addEventListener('click', function click() {
-  console.log('clicked');
-  popContainer.classList.add('removeCard');
-});
+//Here place it

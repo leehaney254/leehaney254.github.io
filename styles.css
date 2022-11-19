@@ -56,6 +56,26 @@ label {
 
 #popImg {
   height: '24px';
+  margin-left: 55px;
+}
+
+.popButton {
+  background: #FF6B00;
+  padding: 12px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: #fff;
+  letter-spacing: 0.03em;
+  border: none;
+}
+
+.popSize {
+  width: 343px;
+  height: 718px;
+  padding: 16px;
 }
 
 .firstBadge {
@@ -172,8 +192,30 @@ label {
 }
 
 .arrange {
-  justify-content: space-around;
   align-items: center;
+  margin-bottom: 45px;
+}
+
+.popHead {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #172B4D;
+}
+
+.popSec {
+  margin-top: 15px;
+}
+
+.popText {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #344563;
 }
 
 #space-down {
