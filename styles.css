@@ -7,6 +7,11 @@ label {
   display: none;
 }
 
+.btnAdjust {
+  display: flex;
+  flex-direction: row;
+}
+
 .title {
   font-family: 'Crete Round', sans-serif;
   font-style: normal;
@@ -198,7 +203,26 @@ label {
 }
 
 .sourceLeft {
-  margin-left: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.zouze {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 100px;
+}
+
+.livewidth {
+  width: 134px;
+}
+
+.sourceWidth {
+  width: 159px;
+  margin-left: 20px;
 }
 
 #hum-menu {
@@ -702,6 +726,10 @@ button:hover {
     display: none;
   }
 
+  .zouze {
+    margin-top: 0;
+  }
+
   #hide-mail {
     display: inline;
   }
@@ -846,6 +874,10 @@ button:hover {
 
   .spaces {
     margin-left: 25px;
+  }
+
+  .maginSpace {
+    padding-left: 100px;
   }
 
   .marginBtn {

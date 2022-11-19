@@ -249,6 +249,7 @@ function PopUp(cardinfo) {
   const gitIcon = document.createElement('img');
   const liveIcon = document.createElement('img');
   const deskImg = document.createElement('img');
+  const btnDiv = document.createElement('div');
 
   // give class
   popContainer.classList.add('blurBack');
@@ -261,6 +262,7 @@ function PopUp(cardinfo) {
   popImg.setAttribute('id', 'popImg');
   popDiv.classList.add('flexs', 'arrange');
   infoDiv.classList.add('spaces');
+  btnDiv.classList.add('zouze');
 
   if (cardinfo.name === otherProjects[0].name) {
     // create the first image
@@ -270,14 +272,16 @@ function PopUp(cardinfo) {
     deskImg.setAttribute('src', cardinfo.desktopImg);
     deskImg.setAttribute('alt', 'Desktop version card');
     deskImg.setAttribute('id', 'remMob');
-    seesource.classList.add('popButton', 'sourceLeft', 'marginBtn');
+    seesource.classList.add('popButton', 'sourceLeft', 'sourceWidth');
+    seeLive.classList.add('popButton', 'sourceLeft', 'marginBtn', 'livewidth');
 
     flexDiv.appendChild(deskImg);
     flexDiv.appendChild(firstImage);
   } else {
     firstImage.setAttribute('src', cardinfo.image);
     firstImage.setAttribute('alt', 'Mobile version card');
-    seesource.classList.add('popButton', 'sourceLeft', 'marginBtn2');
+    seesource.classList.add('popButton', 'sourceLeft', 'sourceWidth');
+    seeLive.classList.add('popButton', 'sourceLeft', 'marginBtn2', 'livewidth');
     firstImage.classList.add('imgHeight');
     flexDiv.appendChild(firstImage);
   }
@@ -308,8 +312,9 @@ function PopUp(cardinfo) {
   disDiv.appendChild(flexDiv);
   flexDiv.appendChild(infoDiv);
   infoDiv.appendChild(info);
-  infoDiv.appendChild(seeLive);
-  infoDiv.appendChild(seesource);
+  infoDiv.appendChild(btnDiv);
+  btnDiv.appendChild(seeLive);
+  btnDiv.appendChild(seesource);
   seesource.appendChild(gitIcon);
   seeLive.appendChild(liveIcon);
 
