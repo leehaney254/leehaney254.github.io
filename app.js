@@ -286,3 +286,16 @@ function PopUp(cardinfo) {
 }
 
 //Here place it
+
+popupButton = document.querySelectorAll('button');
+popupButton.forEach((btn, i) => {
+  btn.addEventListener('click', function click() {
+    PopUp(otherProjects[i])
+  });
+});
+
+hidePop = document.queryCommandValue('popImg');
+hidePop.addEventListener('click', function close() {
+  console.log('clicked');
+  popContainer.classList.add('removeCard');
+});
