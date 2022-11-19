@@ -82,7 +82,7 @@ const otherProjects = [
     description:
       "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
     image: './assets/rest-card.png',
-    desktopImg: './assets/Img\ Placeholder.png',
+    desktopImg: './assets/Img-Placeholder.png',
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
     sourceLink: '#',
@@ -287,8 +287,8 @@ function PopUp(cardinfo) {
   info.innerHTML = cardinfo.description;
   seeLive.innerText = 'See Live';
   seesource.innerText = 'See Source';
-  gitIcon.setAttribute('src', './assets/Icon\ -GitHub.png');
-  liveIcon.setAttribute('src', './assets/Icon\ -\ Export.png');
+  gitIcon.setAttribute('src', './assets/Icon-GitHub.png');
+  liveIcon.setAttribute('src', './assets/Icon-Export.png');
 
   // loop through to create badges
   tech.forEach((listItems) => {
@@ -317,7 +317,7 @@ function PopUp(cardinfo) {
   if (hidePop) {
     hidePop.addEventListener('click', () => {
       disDiv.remove();
-      popContainer.classList.remove('blurBack')
+      popContainer.classList.remove('blurBack');
     });
   }
 }
