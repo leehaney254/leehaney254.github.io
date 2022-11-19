@@ -123,7 +123,7 @@ const otherProjects = [
     name: 'Profesional Art Printing Data',
     description:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo asperiores sit laborum totam fugit beatae earum alias',
-    image: "url('./assets/rest-card.png')",
+    image: './assets/rest-card.png',
     desktopImg: './assets/cardimg1.png',
     technologies: ['html', 'bootstrap', 'Ruby'],
     liveLink: '#',
@@ -254,6 +254,7 @@ function PopUp(cardinfo) {
   liveIcon = document.createElement('img');
 
   //give class
+  popContainer.classList.add('blurBack');
   disDiv.classList.add('popSize');
   popTitle.classList.add('popHead');
   info.classList.add('popText');
@@ -266,6 +267,7 @@ function PopUp(cardinfo) {
   flexDiv.classList.add('popSec');
   popImg.setAttribute('id', 'popImg');
 
+
   //give attributtes
   popTitle.innerText = cardinfo.name;
   popImg.setAttribute('src', './assets/iconCancel.png');
@@ -273,7 +275,7 @@ function PopUp(cardinfo) {
   seeLive.innerText = 'See Live';
   seesource.innerText = 'See Source';
   gitIcon.setAttribute('src', './assets/Icon\ -GitHub.png');
-  liveIcon.setAttribute('src', './assets/Icon\ -\ Export.png')
+  liveIcon.setAttribute('src', './assets/Icon\ -\ Export.png');
 
   //loop through to create badges
   tech.forEach((listItems) => {
@@ -305,9 +307,11 @@ function PopUp(cardinfo) {
 
   //listen for close button
   let hidePop = document.querySelector('#popImg');
-  hidePop.addEventListener('click', () => {
-    disDiv.classList.add('removeCard');
-  })
+  if (hidePop) {
+    hidePop.addEventListener('click', () => {
+      disDiv.remove();
+    })
+  }
 }
 
 popupButton = document.querySelectorAll('button');
@@ -316,6 +320,9 @@ popupButton.forEach((btn, i) => {
     PopUp(otherProjects[i])
   });
 });
+
+
+
 
 
 

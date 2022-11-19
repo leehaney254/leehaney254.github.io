@@ -16,7 +16,7 @@ label {
 }
 
 #dynamicPortfolio {
-  margin: 0 24px 0 10px;
+  margin: 0 24px 0 -5px;
 }
 
 #firstTitle {
@@ -80,9 +80,6 @@ label {
   width: 343px;
   height: 718px;
   padding: 16px;
-  position: fixed;
-  top: 0;
-  z-index: 98;
   background-color: white;
   transition: transform 0.1s;
 }
@@ -205,9 +202,21 @@ label {
   display: flex;
 }
 
+.blur {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+.blurBack {
+  position: fixed;
+  top: 6%;
+  left: 2%;
+  z-index: 98;
+}
+
 .arrange {
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
 .popHead {
