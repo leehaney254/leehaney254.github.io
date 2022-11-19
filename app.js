@@ -12,7 +12,6 @@ const emailInput = document.querySelector('#email');
 const fullName = document.querySelector('#fullname');
 const textArea = document.querySelector('#textarea');
 
-
 // Create the functions
 function menuToogle() {
   if (!displayMenu) {
@@ -66,7 +65,7 @@ function fillData() {
 
 window.addEventListener('load', fillData);
 
-//create the card information
+// create the card information
 const otherProjects = [
   {
     name: 'Multi-Post Stories',
@@ -142,26 +141,26 @@ const otherProjects = [
 ];
 
 function firstCard(cardinfo) {
-  //crate elements
-  container = document.createElement('div');
-  firstImage = document.createElement('img');
-  deskImg = document.createElement('img');
-  title = document.createElement('h3');
-  infomation = document.createElement('p');
-  badgeList = document.createElement('ul');
-  button = document.createElement('button');
-  firstsplit = document.createElement('div');
+  // crate elements
+  const container = document.createElement('div');
+  const firstImage = document.createElement('img');
+  const deskImg = document.createElement('img');
+  const title = document.createElement('h3');
+  const infomation = document.createElement('p');
+  const badgeList = document.createElement('ul');
+  const button = document.createElement('button');
+  const firstsplit = document.createElement('div');
 
-  //give attributes
+  // give attributes
   title.innerHTML = cardinfo.name;
   infomation.innerText = cardinfo.description;
-  let tech = cardinfo.technologies;
+  const tech = cardinfo.technologies;
 
-  //loop through to create badges
+  // loop through to create badges
   tech.forEach((listItems) => {
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.innerText = listItems;
-    if (cardinfo.name == otherProjects[0].name) {
+    if (cardinfo.name === otherProjects[0].name) {
       li.classList.add('firstBadge');
     } else {
       li.classList.add('otherBadge');
@@ -170,61 +169,58 @@ function firstCard(cardinfo) {
   });
   button.innerText = 'See Project';
 
-  //Give classes and id's
+  // Give classes and id's
   container.classList.add('cardSize');
   title.classList.add('title');
   badgeList.classList.add('badgeStyle');
   button.classList.add('button');
 
-  //check if its the other cards and add it as a background image
-  if (cardinfo.name == otherProjects[0].name) {
-    //create the first image
+  // check if its the other cards and add it as a background image
+  if (cardinfo.name === otherProjects[0].name) {
+    // create the first image
     firstImage.setAttribute('src', cardinfo.image);
     firstImage.setAttribute('alt', 'Mobile version card');
-    firstImage.setAttribute("id", "remDesk");
+    firstImage.setAttribute('id', 'remDesk');
     deskImg.setAttribute('src', cardinfo.desktopImg);
     deskImg.setAttribute('alt', 'Desktop version card');
-    deskImg.setAttribute("id", "remMob");
+    deskImg.setAttribute('id', 'remMob');
 
-
-    //add styles to the first card
-    title.setAttribute("id", "firstTitle");
-    infomation.setAttribute("id", "firstParagragh");
-    button.setAttribute("id", "firstBtnPad");
-    firstsplit.classList.add('spaceLefts')
+    // add styles to the first card
+    title.setAttribute('id', 'firstTitle');
+    infomation.setAttribute('id', 'firstParagragh');
+    button.setAttribute('id', 'firstBtnPad');
+    firstsplit.classList.add('spaceLefts');
 
     container.appendChild(firstImage);
-    container.appendChild(deskImg)
+    container.appendChild(deskImg);
   } else {
-    //add style to other cards
+    // add style to other cards
     container.classList.add('cardImages');
     title.classList.add('otherTitle');
     infomation.classList.add('paragraph');
     container.classList.add('backCardImg');
     button.classList.add('otherCardBtn', 'marginTopOther');
-    infomation.style.width = "295px";
+    infomation.style.width = '295px';
   }
 
-  //attach to node
+  // attach to node
   container.appendChild(firstsplit);
   firstsplit.appendChild(title);
   firstsplit.appendChild(infomation);
   firstsplit.appendChild(badgeList);
-  firstsplit.appendChild(button)
-  return container
+  firstsplit.appendChild(button);
+  return container;
 }
 
-
 function buildCards() {
-  portfolio = document.querySelector('#dynamicPortfolio');
-  cardOne = document.createElement('div');
+  const portfolio = document.querySelector('#dynamicPortfolio');
+  const cardOne = document.createElement('div');
 
+  cardOne.setAttribute('id', 'cardGrid');
 
-  cardOne.setAttribute("id", "cardGrid");
-
-  //add the cards dynamically
+  // add the cards dynamically
   otherProjects.forEach((cards) => {
-    if (cards.name == otherProjects[0].name) {
+    if (cards.name === otherProjects[0].name) {
       portfolio.appendChild(firstCard(cards));
     } else {
       cardOne.appendChild(firstCard(cards));
@@ -235,25 +231,26 @@ function buildCards() {
 
 buildCards();
 
-popContainer = document.querySelector('#popUp');
+const popContainer = document.querySelector('#popUp');
 
 function PopUp(cardinfo) {
-  popDiv = document.createElement('div');
-  disDiv = document.createElement('div');
-  popTitle = document.createElement('h2');
-  popImg = document.createElement('img');
-  let tech = cardinfo.technologies;
-  badgeList = document.createElement('ul');
-  firstImage = document.createElement('img');
-  flexDiv = document.createElement('div');
-  info = document.createElement('p');
-  infoDiv = document.createElement('div');
-  seeLive = document.createElement('button');
-  seesource = document.createElement('button');
-  gitIcon = document.createElement('img');
-  liveIcon = document.createElement('img');
+  const popDiv = document.createElement('div');
+  const disDiv = document.createElement('div');
+  const popTitle = document.createElement('h2');
+  const popImg = document.createElement('img');
+  const tech = cardinfo.technologies;
+  const badgeList = document.createElement('ul');
+  const firstImage = document.createElement('img');
+  const flexDiv = document.createElement('div');
+  const info = document.createElement('p');
+  const infoDiv = document.createElement('div');
+  const seeLive = document.createElement('button');
+  const seesource = document.createElement('button');
+  const gitIcon = document.createElement('img');
+  const liveIcon = document.createElement('img');
+  const deskImg = document.createElement('img');
 
-  //give class
+  // give class
   popContainer.classList.add('blurBack');
   disDiv.classList.add('popSize');
   popTitle.classList.add('popHead');
@@ -266,23 +263,16 @@ function PopUp(cardinfo) {
   popDiv.classList.add('flexs', 'arrange');
   infoDiv.classList.add('spaces');
 
-  if (cardinfo.name == otherProjects[0].name) {
-    //create the first image
+  if (cardinfo.name === otherProjects[0].name) {
+    // create the first image
     firstImage.setAttribute('src', cardinfo.image);
     firstImage.setAttribute('alt', 'Mobile version card');
-    firstImage.setAttribute("id", "remDesk");
+    firstImage.setAttribute('id', 'remDesk');
     deskImg.setAttribute('src', cardinfo.desktopImg);
     deskImg.setAttribute('alt', 'Desktop version card');
-    deskImg.setAttribute("id", "remMob");
+    deskImg.setAttribute('id', 'remMob');
 
-
-    //add styles to the first card
-    title.setAttribute("id", "firstTitle");
-    infomation.setAttribute("id", "firstParagragh");
-    button.setAttribute("id", "firstBtnPad");
-    firstsplit.classList.add('spaceLefts')
-
-    flexDiv.appendChild(deskImg)
+    flexDiv.appendChild(deskImg);
     flexDiv.appendChild(firstImage);
   } else {
     firstImage.setAttribute('src', cardinfo.image);
@@ -291,7 +281,7 @@ function PopUp(cardinfo) {
     flexDiv.appendChild(firstImage);
   }
 
-  //give attributtes
+  // give attributtes
   popTitle.innerText = cardinfo.name;
   popImg.setAttribute('src', './assets/iconCancel.png');
   info.innerHTML = cardinfo.description;
@@ -300,16 +290,15 @@ function PopUp(cardinfo) {
   gitIcon.setAttribute('src', './assets/Icon\ -GitHub.png');
   liveIcon.setAttribute('src', './assets/Icon\ -\ Export.png');
 
-  //loop through to create badges
+  // loop through to create badges
   tech.forEach((listItems) => {
-    let li = document.createElement('li');
+    const li = document.createElement('li');
     li.innerText = listItems;
     li.classList.add('firstBadge');
     badgeList.appendChild(li);
   });
 
-
-  //add node
+  // add node
   popContainer.appendChild(disDiv);
   disDiv.appendChild(popDiv);
   popDiv.appendChild(popTitle);
@@ -323,24 +312,18 @@ function PopUp(cardinfo) {
   seesource.appendChild(gitIcon);
   seeLive.appendChild(liveIcon);
 
-  //listen for close button
-  let hidePop = document.querySelector('#popImg');
+  // listen for close button
+  const hidePop = document.querySelector('#popImg');
   if (hidePop) {
     hidePop.addEventListener('click', () => {
       disDiv.remove();
-    })
+    });
   }
 }
 
-popupButton = document.querySelectorAll('button');
+const popupButton = document.querySelectorAll('button');
 popupButton.forEach((btn, i) => {
-  btn.addEventListener('click', function click() {
-    PopUp(otherProjects[i])
+  btn.addEventListener('click', () => {
+    PopUp(otherProjects[i]);
   });
 });
-
-
-
-
-
-

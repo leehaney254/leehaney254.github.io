@@ -8,7 +8,7 @@ label {
 }
 
 .title {
-  font-family: 'Crete Round';
+  font-family: 'Crete Round', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 32px;
@@ -20,7 +20,7 @@ label {
 }
 
 #firstTitle {
-  color: #091E42;
+  color: #091e42;
 }
 
 .otherTitle {
@@ -29,7 +29,7 @@ label {
 }
 
 .paragraph {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -40,12 +40,12 @@ label {
 }
 
 #firstParagragh {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  color: #091E42;
+  color: #091e42;
 }
 
 .badgeStyle {
@@ -64,9 +64,9 @@ label {
 }
 
 .popButton {
-  background: #FF6B00;
+  background: #ff6b00;
   padding: 12px;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
@@ -85,20 +85,20 @@ label {
 }
 
 .firstBadge {
-  border: 1px solid #8993A4;
-  font-family: 'Inter';
+  border: 1px solid #8993a4;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
-  color: #091E42;
+  color: #091e42;
   padding: 10px 12px;
   margin: 0 5px;
 }
 
 .otherBadge {
   background: rgba(255, 255, 255, 0.24);
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
@@ -149,14 +149,14 @@ label {
 }
 
 .button {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  color: #FFFFFF;
-  background: #FF6B00;
+  color: #fff;
+  background: #ff6b00;
   border: none;
 }
 
@@ -225,12 +225,12 @@ label {
 }
 
 .popHead {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-  color: #172B4D;
+  color: #172b4d;
 }
 
 .popSec {
@@ -238,7 +238,7 @@ label {
 }
 
 .popText {
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -707,6 +707,10 @@ button:hover {
     margin-right: 150px;
     gap: 30px;
     transform: translateY(0);
+  }
+
+  #dynamicPortfolio {
+    margin: 0 24px 0 120px;
   }
 
   .anc-decor {
