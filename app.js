@@ -317,6 +317,7 @@ function PopUp(cardinfo) {
   if (hidePop) {
     hidePop.addEventListener('click', () => {
       disDiv.remove();
+      popContainer.classList.remove('blurBack')
     });
   }
 }

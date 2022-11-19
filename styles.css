@@ -82,6 +82,7 @@ label {
   padding: 16px;
   background-color: white;
   transition: transform 0.1s;
+  margin: 10px;
 }
 
 .firstBadge {
@@ -203,16 +204,16 @@ label {
   display: flex;
 }
 
-.blur {
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
-}
-
 .blurBack {
   position: fixed;
-  top: 6%;
-  left: 2%;
+  top: 0;
+  left: 0;
   z-index: 98;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+
 }
 
 .arrange {
@@ -741,6 +742,7 @@ button:hover {
   .popSize {
     width: 1156px;
     height: 631px;
+    margin: 60px 0 0 130px;
   }
 
   #conts {
