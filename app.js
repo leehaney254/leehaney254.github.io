@@ -257,7 +257,6 @@ function PopUp(cardinfo) {
   info.classList.add('popText');
   badgeList.classList.add('badgeStyle');
   seeLive.classList.add('popButton');
-  seesource.classList.add('popButton', 'sourceLeft', 'marginBtn');
   flexDiv.classList.add('popSec');
   popImg.setAttribute('id', 'popImg');
   popDiv.classList.add('flexs', 'arrange');
@@ -271,12 +270,14 @@ function PopUp(cardinfo) {
     deskImg.setAttribute('src', cardinfo.desktopImg);
     deskImg.setAttribute('alt', 'Desktop version card');
     deskImg.setAttribute('id', 'remMob');
+    seesource.classList.add('popButton', 'sourceLeft', 'marginBtn');
 
     flexDiv.appendChild(deskImg);
     flexDiv.appendChild(firstImage);
   } else {
     firstImage.setAttribute('src', cardinfo.image);
     firstImage.setAttribute('alt', 'Mobile version card');
+    seesource.classList.add('popButton', 'sourceLeft', 'marginBtn2');
     firstImage.classList.add('imgHeight');
     flexDiv.appendChild(firstImage);
   }
@@ -294,7 +295,7 @@ function PopUp(cardinfo) {
   tech.forEach((listItems) => {
     const li = document.createElement('li');
     li.innerText = listItems;
-    li.classList.add('firstBadge');
+    li.classList.add('techstyle');
     badgeList.appendChild(li);
   });
 

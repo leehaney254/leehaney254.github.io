@@ -15,6 +15,18 @@ label {
   line-height: 44px;
 }
 
+.techstyle {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #3C3A39;
+  border: 1px solid #979493;
+  padding: 10px 12px;
+  margin: 0 5px;
+}
+
 #dynamicPortfolio {
   margin: 0 24px 0 -5px;
 }
@@ -86,13 +98,13 @@ label {
 }
 
 .firstBadge {
-  border: 1px solid #8993a4;
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
   line-height: 20px;
   color: #091e42;
+  border: 1px solid #8993a4;
   padding: 10px 12px;
   margin: 0 5px;
 }
@@ -222,6 +234,7 @@ label {
 
 .imgHeight {
   height: 200px;
+  width: 311px;
 }
 
 .popHead {
@@ -759,7 +772,8 @@ button:hover {
   }
 
   .imgHeight {
-    height: auto;
+    height: 448px;
+    width: 659px;
   }
 
   .popSec {
@@ -836,6 +850,10 @@ button:hover {
 
   .marginBtn {
     margin-top: 270px;
+  }
+
+  .marginBtn2 {
+    margin-top: 313px;
   }
 
   #form-ul li {
