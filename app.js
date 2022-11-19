@@ -259,14 +259,37 @@ function PopUp(cardinfo) {
   popTitle.classList.add('popHead');
   info.classList.add('popText');
   badgeList.classList.add('badgeStyle');
-  firstImage.setAttribute('src', cardinfo.image);
-  firstImage.setAttribute('alt', 'Pop-up image');
-  popDiv.classList.add('flexs', 'arrange');
   seeLive.classList.add('popButton');
-  seesource.classList.add('popButton', 'sourceLeft');
+  seesource.classList.add('popButton', 'sourceLeft', 'marginBtn');
   flexDiv.classList.add('popSec');
   popImg.setAttribute('id', 'popImg');
+  popDiv.classList.add('flexs', 'arrange');
+  infoDiv.classList.add('spaces');
 
+  if (cardinfo.name == otherProjects[0].name) {
+    //create the first image
+    firstImage.setAttribute('src', cardinfo.image);
+    firstImage.setAttribute('alt', 'Mobile version card');
+    firstImage.setAttribute("id", "remDesk");
+    deskImg.setAttribute('src', cardinfo.desktopImg);
+    deskImg.setAttribute('alt', 'Desktop version card');
+    deskImg.setAttribute("id", "remMob");
+
+
+    //add styles to the first card
+    title.setAttribute("id", "firstTitle");
+    infomation.setAttribute("id", "firstParagragh");
+    button.setAttribute("id", "firstBtnPad");
+    firstsplit.classList.add('spaceLefts')
+
+    flexDiv.appendChild(deskImg)
+    flexDiv.appendChild(firstImage);
+  } else {
+    firstImage.setAttribute('src', cardinfo.image);
+    firstImage.setAttribute('alt', 'Mobile version card');
+    firstImage.classList.add('imgHeight');
+    flexDiv.appendChild(firstImage);
+  }
 
   //give attributtes
   popTitle.innerText = cardinfo.name;
@@ -281,11 +304,7 @@ function PopUp(cardinfo) {
   tech.forEach((listItems) => {
     let li = document.createElement('li');
     li.innerText = listItems;
-    if (cardinfo.name == otherProjects[0].name) {
-      li.classList.add('firstBadge');
-    } else {
-      li.classList.add('otherBadge');
-    }
+    li.classList.add('firstBadge');
     badgeList.appendChild(li);
   });
 
@@ -297,7 +316,6 @@ function PopUp(cardinfo) {
   popDiv.appendChild(popImg);
   disDiv.appendChild(badgeList);
   disDiv.appendChild(flexDiv);
-  flexDiv.appendChild(firstImage);
   flexDiv.appendChild(infoDiv);
   infoDiv.appendChild(info);
   infoDiv.appendChild(seeLive);
