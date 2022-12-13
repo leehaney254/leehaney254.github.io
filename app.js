@@ -78,14 +78,14 @@ const otherProjects = [
     sourceLink: '#',
   },
   {
-    name: 'Profesional Art Printing Data',
+    name: 'HTML/CSS Capstone Project',
     description:
-      "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
-    image: './assets/rest-card.png',
-    desktopImg: './assets/Img-Placeholder.png',
-    technologies: ['html', 'bootstrap', 'Ruby'],
-    liveLink: '#',
-    sourceLink: '#',
+      'In this project, I created a website where people can log in and get information about an online bootcamp course.',
+    image: './assets/home.png',
+    desktopImg: './assets/home.png',
+    technologies: ['HTML', 'CSS', 'Linters'],
+    liveLink: 'https://leehaney254.github.io/Castapone/',
+    sourceLink: 'https://github.com/leehaney254/Castapone',
   },
 
   {
@@ -246,6 +246,8 @@ function PopUp(cardinfo) {
   const infoDiv = document.createElement('div');
   const seeLive = document.createElement('button');
   const seesource = document.createElement('button');
+  const seeLiveLink = document.createElement('a');
+  const seesourceLink = document.createElement('a');
   const gitIcon = document.createElement('img');
   const liveIcon = document.createElement('img');
   const deskImg = document.createElement('img');
@@ -263,6 +265,8 @@ function PopUp(cardinfo) {
   popDiv.classList.add('flexs', 'arrange');
   infoDiv.classList.add('spaces');
   btnDiv.classList.add('zouze');
+  seeLiveLink.classList.add('links');
+  seesourceLink.classList.add('links');
 
   if (cardinfo.name === otherProjects[0].name) {
     // create the first image
@@ -292,6 +296,10 @@ function PopUp(cardinfo) {
   info.innerHTML = cardinfo.description;
   seeLive.innerText = 'See Live';
   seesource.innerText = 'See Source';
+  seeLiveLink.setAttribute('href', cardinfo.liveLink);
+  seeLiveLink.setAttribute('target', '_blank');
+  seesourceLink.setAttribute('href', cardinfo.sourceLink);
+  seesourceLink.setAttribute('target', '_blank');
   gitIcon.setAttribute('src', './assets/Icon-GitHub.png');
   liveIcon.setAttribute('src', './assets/Icon-Export.png');
 
@@ -313,8 +321,10 @@ function PopUp(cardinfo) {
   flexDiv.appendChild(infoDiv);
   infoDiv.appendChild(info);
   infoDiv.appendChild(btnDiv);
-  btnDiv.appendChild(seeLive);
-  btnDiv.appendChild(seesource);
+  seeLiveLink.appendChild(seeLive);
+  btnDiv.appendChild(seeLiveLink);
+  seesourceLink.appendChild(seesource);
+  btnDiv.appendChild(seesourceLink);
   seesource.appendChild(gitIcon);
   seeLive.appendChild(liveIcon);
 
