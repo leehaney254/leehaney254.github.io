@@ -7,6 +7,177 @@ label {
   display: none;
 }
 
+.btnAdjust {
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  font-family: 'Crete Round', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.techstyle {
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 16px;
+  color: #3c3a39;
+  border: 1px solid #979493;
+  padding: 10px 12px;
+  margin: 0 5px;
+}
+
+#dynamicPortfolio {
+  margin: 0 24px 0 -5px;
+}
+
+#firstTitle {
+  color: #091e42;
+}
+
+.otherTitle {
+  color: #fff;
+  margin: 85px 0 0 15px;
+}
+
+.paragraph {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+#firstParagragh {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #091e42;
+}
+
+.badgeStyle {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.removeCard {
+  display: none;
+}
+
+#popImg {
+  height: '24px';
+  margin-left: 45px;
+}
+
+.popButton {
+  background: #ff6b00;
+  padding: 12px;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  color: #fff;
+  letter-spacing: 0.03em;
+  border: none;
+}
+
+.popSize {
+  width: 343px;
+  height: 718px;
+  padding: 16px;
+  background-color: white;
+  transition: transform 0.1s;
+  margin: 10px;
+}
+
+.firstBadge {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #091e42;
+  border: 1px solid #8993a4;
+  padding: 10px 12px;
+  margin: 0 5px;
+}
+
+.otherBadge {
+  background: rgba(255, 255, 255, 0.24);
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
+  color: #fff;
+  padding: 10px 12px;
+  margin: 0 0 0 10px;
+}
+
+.backCardImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cardGrid {
+  display: grid;
+  grid-template-columns: 375px;
+  grid-row-gap: 24px;
+  margin-top: 30px;
+}
+
+#cardDeskGrid {
+  grid-template-columns: 375px 375px 375px;
+}
+
+.cardSize {
+  max-width: 375px;
+  max-height: 568px;
+  margin: 15px 24px;
+}
+
+.marginTopOther {
+  margin-top: 20px;
+}
+
+.cardImages {
+  background-image: url('./assets/rest-card.png');
+}
+
+#firstBtnPad {
+  padding: 12px;
+  margin-top: 10px;
+}
+
+.otherCardBtn {
+  width: 327px;
+  height: 48px;
+}
+
+.button {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: #ff6b00;
+  border: none;
+}
+
 #hide-mail {
   display: none;
 }
@@ -31,6 +202,29 @@ label {
   transform: translateY(-100%);
 }
 
+.sourceLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.zouze {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 35px;
+}
+
+.livewidth {
+  width: 134px;
+}
+
+.sourceWidth {
+  width: 159px;
+  margin-left: 20px;
+}
+
 #hum-menu {
   position: fixed;
   z-index: 100;
@@ -44,6 +238,49 @@ label {
 
 .flexs {
   display: flex;
+}
+
+.blurBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 98;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(15px);
+}
+
+.arrange {
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.imgHeight {
+  height: 200px;
+  width: 311px;
+}
+
+.popHead {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  color: #172b4d;
+}
+
+.popSec {
+  margin-top: 15px;
+}
+
+.popText {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #344563;
 }
 
 #space-down {
@@ -199,68 +436,12 @@ ul {
   color: #1c1a19;
 }
 
-#sec {
-  display: grid;
-  grid-template-rows: 386px 386px 386px 386px 386px 386px;
-  grid-gap: 24px 0;
-}
-
-.card {
-  width: 327px;
-  display: flex;
-  flex-direction: column;
-  margin: 0 24px 0 24px;
-}
-
-.other-cards {
-  background-image: url("./assets/rest-card.png");
-  background-repeat: no-repeat;
-}
-
-#head1 {
-  height: 36px;
-  font-family: "Crete Round", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #091e42;
-}
-
-.head-other {
-  width: 295px;
-  height: 81px;
-  font-family: "Crete Round", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 44px;
-  color: #fff;
-}
-
-.body-other {
-  width: 295px;
-  height: 87px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #fff;
+#remMob {
+  display: none;
 }
 
 .no-decor {
   text-decoration: none;
-}
-
-#contents1 {
-  height: 147px;
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #091e42;
 }
 
 .buttons {
@@ -294,22 +475,6 @@ ul {
   border: none;
 }
 
-.butcss {
-  width: 49px;
-}
-
-.buthtm {
-  width: 56px;
-}
-
-.butboot {
-  width: 95px;
-}
-
-.butrub {
-  width: 61px;
-}
-
 #butsee1 {
   height: 48px;
   margin-top: 10px;
@@ -331,10 +496,6 @@ ul {
   letter-spacing: 0.03em;
   color: #fff;
   border: none;
-}
-
-.description {
-  margin-left: 10px;
 }
 
 #about-me {
@@ -544,6 +705,14 @@ button:hover {
     margin-top: 10px;
   }
 
+  #remDesk {
+    display: none;
+  }
+
+  #remMob {
+    display: inline;
+  }
+
   #texttwo {
     font-family: "Inter", sans-serif;
     font-style: normal;
@@ -555,6 +724,10 @@ button:hover {
 
   #hum-menu {
     display: none;
+  }
+
+  .zouze {
+    margin-top: 0;
   }
 
   #hide-mail {
@@ -575,6 +748,10 @@ button:hover {
     margin-right: 150px;
     gap: 30px;
     transform: translateY(0);
+  }
+
+  #dynamicPortfolio {
+    margin: 0 24px 0 120px;
   }
 
   .anc-decor {
@@ -602,6 +779,12 @@ button:hover {
     padding-bottom: 200px;
   }
 
+  .popSize {
+    width: 1156px;
+    height: 631px;
+    margin: 60px 0 0 130px;
+  }
+
   #conts {
     display: flex;
     flex-direction: column;
@@ -616,6 +799,20 @@ button:hover {
     width: 60px;
   }
 
+  .imgHeight {
+    height: 448px;
+    width: 659px;
+  }
+
+  .popSec {
+    display: flex;
+    margin-top: 35px;
+  }
+
+  #popImg {
+    margin-left: 700px;
+  }
+
   #heading-second {
     margin-left: 140px;
     display: flex;
@@ -627,16 +824,12 @@ button:hover {
     width: 60%;
   }
 
-  #card {
-    display: flex;
-    flex-direction: row;
-    margin-left: 140px;
+  .popHead {
+    margin-bottom: 0;
   }
 
-  #grid-card {
-    row-gap: 30px;
-    display: grid;
-    grid-template-columns: auto auto auto;
+  .arrange {
+    margin-bottom: 0;
   }
 
   #margin-tops {
@@ -661,19 +854,6 @@ button:hover {
     justify-content: space-around;
   }
 
-  #descp {
-    padding: 0 20px;
-    display: none;
-  }
-
-  #sec {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: 435px 435px;
-    grid-row-gap: 20px;
-    margin: 30px 20px 0 120px;
-  }
-
   form {
     max-width: 684px;
     flex-grow: 2;
@@ -682,6 +862,30 @@ button:hover {
   #form-ul {
     align-items: flex-start;
     width: 100%;
+  }
+
+  .cardSize {
+    display: flex;
+  }
+
+  .spaceLefts {
+    margin-left: 15px;
+  }
+
+  .spaces {
+    margin-left: 25px;
+  }
+
+  .maginSpace {
+    padding-left: 100px;
+  }
+
+  .marginBtn {
+    margin-top: 270px;
+  }
+
+  .marginBtn2 {
+    margin-top: 313px;
   }
 
   #form-ul li {
@@ -705,26 +909,12 @@ button:hover {
     margin-top: 0;
   }
 
-  .first-card {
-    background-image: url(./assets/Img\ Placeholder.png);
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
   .disp-but {
     display: none;
   }
 
   .buttons {
     margin-bottom: 15px;
-  }
-
-  .teni-img {
-    background-image: url(./assets/cardimg.png);
-  }
-
-  .av-img {
-    background-image: url(./assets/cardimg1.png);
   }
 
   #rec-image {
@@ -735,7 +925,8 @@ button:hover {
     display: inline;
   }
 
-  #descp-side {
-    margin-left: 10px;
+  #cardGrid {
+    display: grid;
+    grid-template-columns: 375px 375px 375px;
   }
 }
